@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    age:{{$store.state.age}}
+    <br />
+    a-age:{{$store.state.a.age}}
+    <br />
+    b-c-age:{{$store.state.b.c.age}}
+    <br />
+    d-age:{{$store.state.d.age}}
+    <br />
+    myAge:{{$store.getters.myAge}}
+    <br>
+    <button @click="$store.commit('syncChange', 10)">同步更改</button>
+    <br>
+    <button @click="$store.dispatch('asyncChange', 10)">异步更改</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
